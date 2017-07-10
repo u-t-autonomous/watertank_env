@@ -30,10 +30,10 @@ An instance of watertank()
 tank = watertank(800, 800)
 ```
 
-### Move Command
+### Fill Command
 
 ```python
-tank.move(num)
+tank.fill(num)
 ```
 
 ##### Parameters:
@@ -49,7 +49,9 @@ String: Gives Status - Either Full or Empty
 P3.move(1)
 ```
 1-3: Fill up the tank
+
 0: Nothing happens
+
 -3 - -1: Empty the tank
 
 
