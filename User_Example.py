@@ -10,4 +10,4 @@ while not done:
         done = True
     else:
         tank.fill(x)
-        print(tank.water_l)
+        print (tank.percentage)
