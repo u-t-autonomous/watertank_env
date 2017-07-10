@@ -22,15 +22,16 @@ class watertank:
         pygame.draw.rect(self.screen, (255, 255, 255), self.container_rect, 2)
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, 2))
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, -500))
+        self.percentage = 100 * ((-1 * self.water_l) / self.container_l)
         pygame.display.flip()
 
     def fill_up(self):
         if self.num == 1:
-            self.water_l -= 1 * (self.sx * 0.04166667)
+            self.water_l -= 0.01 * self.container_l
         if self.num == 2:
-            self.water_l -= 2 * (self.sx * 0.04166667)
+            self.water_l -= 0.02 * self.container_l
         if self.num == 3:
-            self.water_l -= 3 * (self.sx * 0.04166667)
+            self.water_l -= 0.03 * self.container_l
         self.container_rect = (self.container_x, self.container_y, self.container_w, self.container_l)
         self.water_rect = (self.water_x, self.water_y, self.water_w, self.water_l)
         self.screen.fill((0, 0, 0))
@@ -38,15 +39,16 @@ class watertank:
         pygame.draw.rect(self.screen, (255, 255, 255), self.container_rect, 2)
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, 2))
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, -500))
+        self.percentage = 100 * ((-1 * self.water_l) / self.container_l)
         pygame.display.flip()
 
     def empty(self):
         if self.num == -1:
-            self.water_l += 1 * (self.sx * 0.04166667)
+            self.water_l += 0.03 * self.container_l
         if self.num == -2:
-            self.water_l += 2 * (self.sx * 0.04166667)
+            self.water_l += 0.02 * self.container_l
         if self.num == -3:
-            self.water_l += 3 * (self.sx * 0.04166667)
+            self.water_l += 0.01 * self.container_l
         self.container_rect = (self.container_x, self.container_y, self.container_w, self.container_l)
         self.water_rect = (self.water_x, self.water_y, self.water_w, self.water_l)
         self.screen.fill((0, 0, 0))
@@ -54,6 +56,7 @@ class watertank:
         pygame.draw.rect(self.screen, (255, 255, 255), self.container_rect, 2)
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, 2))
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, -500))
+        self.percentage = 100 * ((-1 * self.water_l) / self.container_l)
         pygame.display.flip()
 
     def full(self):
@@ -66,6 +69,7 @@ class watertank:
         pygame.draw.rect(self.screen, (255, 255, 255), self.container_rect, 2)
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, 2))
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, -500))
+        self.percentage = 100 * ((-1 * self.water_l) / self.container_l)
         pygame.display.flip()
 
     def empty_2(self):
@@ -78,6 +82,7 @@ class watertank:
         pygame.draw.rect(self.screen, (255, 255, 255), self.container_rect, 2)
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, 2))
         pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, -500))
+        self.percentage = 100 * ((-1 * self.water_l) / self.container_l)
         pygame.display.flip()
 
     def fill(self, num):
@@ -94,6 +99,7 @@ class watertank:
             pygame.draw.rect(self.screen, (255, 255, 255), self.container_rect, 2)
             pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, 2))
             pygame.draw.rect(self.screen, (0, 0, 0), (self.container_x, self.container_y, self.container_w, -500))
+            self.percentage = 100 * ((-1 * self.water_l) / self.container_l)
             pygame.display.flip()
 
         elif num > 0 and (-1 * self.water_l) < self.container_l:
@@ -101,6 +107,6 @@ class watertank:
 
         if num <= 0 <= self.water_l:
             watertank.full(self)
-            
+
         if num >= 0 and (-1 * self.water_l) >= self.container_l:
             watertank.empty_2(self)
